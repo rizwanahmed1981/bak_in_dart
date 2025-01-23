@@ -20,7 +20,8 @@ void main() {
       print("Invalid input! Please enter a valid number.");
       continue;
     }
-    switch (int.parse(choice)) {
+    try{int choiceInt = int.parse(choice);
+    switch (choiceInt) {
       case 1:
         deposit();
         break;
@@ -38,6 +39,9 @@ void main() {
         exit(0);
       default:
         print("Invalid choice! Please select a valid option.");
+    }}
+    catch(e){
+      print("Please input an valid number");
     }
     
   }
